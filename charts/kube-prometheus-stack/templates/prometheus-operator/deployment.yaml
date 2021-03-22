@@ -103,9 +103,6 @@ spec:
           {{- end }}
           resources:
 {{ toYaml .Values.prometheusOperator.resources | indent 12 }}
-          securityContext:
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
 {{- if .Values.prometheusOperator.tls.enabled }}
           volumeMounts:
             - name: tls-secret
